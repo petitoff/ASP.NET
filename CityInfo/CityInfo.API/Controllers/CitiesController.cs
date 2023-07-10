@@ -13,7 +13,7 @@ public class CitiesController : ControllerBase
         return Ok(CitiesDataStore.Current.Cities);
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("{id:int}")]
     public ActionResult<CityDto> GetCity(int id)
     {
         var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == id);

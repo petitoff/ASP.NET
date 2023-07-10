@@ -6,10 +6,8 @@
         public string Name { get; set; } = string.Empty;
         public string? Description { get; set; }
         public int NumberOfPointsOfInterest { get; set; }
-        public int NumberOfPointsInterest
-        {
-            get => PointsOfInterest.Count;
-        }
+        public int NumberOfPointsInterest => PointsOfInterest.Count;
+
         public ICollection<PointOfInterestDto> PointsOfInterest { get; set; }
             = new List<PointOfInterestDto>();
     }
