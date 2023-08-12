@@ -9,9 +9,9 @@ namespace CityInfo.API.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Required]
-        [StringLength(50)]
+        [MaxLength(50)]
         public string Name { get; set; }
-        [StringLength(200)]
+        [MaxLength(200)]
         public string? Description { get; set; }
         public ICollection<PointOfInterest> PointsOfInterest { get; set; }
             = new List<PointOfInterest>();
