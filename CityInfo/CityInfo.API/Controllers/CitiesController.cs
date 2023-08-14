@@ -13,7 +13,7 @@ public class CitiesController : ControllerBase
 {
     private readonly ICityInfoRepository _cityInfoRepository;
     private readonly IMapper _mapper;
-    private const int maxCitiesPageSize = 20;
+    private const int MaxCitiesPageSize = 20;
 
     public CitiesController(ICityInfoRepository cityInfoRepository, IMapper mapper)
     {
@@ -25,9 +25,9 @@ public class CitiesController : ControllerBase
     public async Task<ActionResult<IEnumerable<CityWithoutPointsOfInterestDto>>> GetCities(
         string? name, string? searchQuery, int pageNumber = 1, int pageSize = 10)
     {
-        if (pageSize > maxCitiesPageSize)
+        if (pageSize > MaxCitiesPageSize)
         {
-            pageSize = maxCitiesPageSize;
+            pageSize = MaxCitiesPageSize;
         }
 
         var (citiesEntity, paginationMetadata) = await _cityInfoRepository.GetAllCitiesAsync(name, searchQuery, pageNumber, pageSize);
